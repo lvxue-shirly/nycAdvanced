@@ -1,14 +1,6 @@
 # nyc
 
-[![Build Status](https://travis-ci.org/istanbuljs/nyc.svg?branch=master)](https://travis-ci.org/istanbuljs/nyc)
-[![Coverage Status](https://coveralls.io/repos/bcoe/nyc/badge.svg?branch=)](https://coveralls.io/r/bcoe/nyc?branch=master)
-[![NPM version](https://img.shields.io/npm/v/nyc.svg)](https://www.npmjs.com/package/nyc)
-[![Windows Tests](https://img.shields.io/appveyor/ci/bcoe/nyc-ilw23/master.svg?label=Windows%20Tests)](https://ci.appveyor.com/project/bcoe/nyc-ilw23)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![community slack](http://devtoolscommunity.herokuapp.com/badge.svg)](http://devtoolscommunity.herokuapp.com)
-
-_Having problems? want to contribute? join our [community slack](http://devtoolscommunity.herokuapp.com)_.
-
+base on the nyc ,and import the reports by branch and function.
 Istanbul's state of the art command line interface, with support for:
 
 * applications that spawn subprocesses.
@@ -16,11 +8,11 @@ Istanbul's state of the art command line interface, with support for:
 
 ## Instrumenting your code
 
-You can install nyc as a development dependency and add it to the test stanza
+You can install nycadvanced as a development dependency and add it to the test stanza
 in your package.json.
 
 ```shell
-npm i nyc --save-dev
+npm i nycadvanced --save-dev
 ```
 
 ```json
@@ -34,7 +26,7 @@ npm i nyc --save-dev
 Alternatively, you can install nyc globally and use it to execute `npm test`:
 
 ```shell
-npm i nyc -g
+npm i nycadvanced -g
 ```
 
 ```shell

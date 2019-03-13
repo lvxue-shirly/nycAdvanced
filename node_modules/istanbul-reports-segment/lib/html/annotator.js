@@ -1,6 +1,7 @@
 /*
  Copyright 2012-2015, Yahoo Inc.
  Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ add the jude
  */
 "use strict";
 
@@ -127,7 +128,8 @@ function annotateBranches(fileCoverage, structuredText) {
 
         // only highlight if partial branches are missing or if there is a
         // single uncovered branch.
-        if (sumCount > 0 || (sumCount === 0 && branchArray.length === 1)) {
+        //change here
+        if (sumCount > 0 || (sumCount === 0 && branchArray.length !== 0)) {
             for (i = 0; i < branchArray.length && i < metaArray.length; i += 1) {
                 count = branchArray[i];
                 meta = metaArray[i];
@@ -149,10 +151,18 @@ function annotateBranches(fileCoverage, structuredText) {
                     if (branchMeta[branchName].type === 'if') {
                     // 'if' is a special case
                     // since the else branch might not be visible, being non-existent
-                        text.insertAt(startCol, lt + 'span class="' +
+                    //add the judge
+                        if(branchArray[0]=== 0 && branchArray[branchArray.length-1] === 0){
+                                text.insertAt(i === 0 ?startCol-2:startCol, lt + 'span class="' +
+                                (meta.skip ? 'skip-if-branch' : 'missing-if-branch') + '"' +
+                                title((i === 0 ? 'if' : 'else') + ' path not taken') + gt +
+                                (i === 0 ? 'I' : 'E') + lt + '/span' + gt, true, false);                            
+                        }else{
+                            text.insertAt(startCol, lt + 'span class="' +
                             (meta.skip ? 'skip-if-branch' : 'missing-if-branch') + '"' +
                             title((i === 0 ? 'if' : 'else') + ' path not taken') + gt +
                             (i === 0 ? 'I' : 'E') + lt + '/span' + gt, true, false);
+                        }
                     } else {
                         text.wrap(startCol,
                             openSpan,
