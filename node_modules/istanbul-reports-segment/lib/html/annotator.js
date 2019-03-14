@@ -157,7 +157,7 @@ function annotateBranches(fileCoverage, structuredText) {
                     //console.log("if分支",branchArray[0]=== 0 && branchArray[branchArray.length-1] === 0);
                         if(branchArray[0]=== 0 && branchArray[branchArray.length-1] === 0){
                                 text.insertAt(i === 0 ?startCol-1:startCol, lt + 'span class="' +
-                                (meta.skip ? 'skip-if-branch' : 'missing-if-branch') +(i === 0?' ':' missing-if-branch-add')+'"' +
+                                (meta.skip ? 'skip-if-branch' : 'missing-if-branch') +(i === 0?' missing-if-branch-add':'')+'"' +
                                 title((i === 0 ? 'if' : 'else') + ' path not taken') + gt +
                                 (i === 0 ? 'I' : 'E') + lt + '/span' + gt, true, false);                            
                         }else{
