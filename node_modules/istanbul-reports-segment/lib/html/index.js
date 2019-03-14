@@ -141,6 +141,7 @@ function fillTemplate(node, templateData, linkMapper, context) {
 }
 
 function HtmlReport(opts) {
+    console.log('create html reporter');
     this.verbose = opts.verbose;
     this.linkMapper = opts.linkMapper || standardLinkMapper;
     this.subdir = opts.subdir || '';
@@ -229,6 +230,7 @@ HtmlReport.prototype.onSummary = function (node, context) {
 };
 
 HtmlReport.prototype.onDetail = function (node, context) {
+    console.log("执行了detail原型");
     var linkMapper = this.linkMapper,
         templateData = this.getTemplateData(),
         cw;

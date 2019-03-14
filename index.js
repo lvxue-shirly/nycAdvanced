@@ -438,15 +438,15 @@ NYC.prototype.getCoverageMapFromAllCoverageFiles = function (baseDirectory) {
 }
 
 NYC.prototype.report = function () {
-    console.log('调用report');
+    // console.log('调用report');
   var tree
   var map = this.getCoverageMapFromAllCoverageFiles()
-  console.log(map);
+//   console.log(map);
   var context = libReport.createContext({
     dir: this.reportDirectory(),
     watermarks: this.config.watermarks
   })
-  console.log(context)
+//   console.log(context)
   tree = libReport.summarizers.pkg(map)
 
   this.reporter.forEach((_reporter) => {

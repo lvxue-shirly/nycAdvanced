@@ -102,6 +102,7 @@ function annotateFunctions(fileCoverage, structuredText) {
 }
 
 function annotateBranches(fileCoverage, structuredText) {
+    console.log('structuredText',structuredText);
     var branchStats = fileCoverage.b,
         branchMeta = fileCoverage.branchMap;
     if (!branchStats) {
@@ -130,6 +131,7 @@ function annotateBranches(fileCoverage, structuredText) {
         // single uncovered branch.
         //change here
         if (sumCount > 0 || (sumCount === 0 && branchArray.length !== 0)) {
+            console.log("满足条件");
             for (i = 0; i < branchArray.length && i < metaArray.length; i += 1) {
                 count = branchArray[i];
                 meta = metaArray[i];
@@ -152,8 +154,9 @@ function annotateBranches(fileCoverage, structuredText) {
                     // 'if' is a special case
                     // since the else branch might not be visible, being non-existent
                     //add the judge
+                    console.log("if分支",branchArray[0]=== 0 && branchArray[branchArray.length-1] === 0);
                         if(branchArray[0]=== 0 && branchArray[branchArray.length-1] === 0){
-                                text.insertAt(i === 0 ?startCol-2:startCol, lt + 'span class="' +
+                                text.insertAt(i === 0 ?startCol:startCol-2, lt + 'span class="' +
                                 (meta.skip ? 'skip-if-branch' : 'missing-if-branch') + '"' +
                                 title((i === 0 ? 'if' : 'else') + ' path not taken') + gt +
                                 (i === 0 ? 'I' : 'E') + lt + '/span' + gt, true, false);                            
