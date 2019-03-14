@@ -94,7 +94,7 @@ table.coverage td span.cline-any {
 }
 .missing-if-branch {
     display: inline-block;
-    /* margin-right: 5px; */
+    margin-right: 5px;
     border-radius: 3px;
     position: relative;
     padding: 0 4px;
@@ -102,7 +102,7 @@ table.coverage td span.cline-any {
     color: yellow;
 }
 .missing-if-branch-add{
-    margin-right: 5px;
+    margin-right: 0px;
 }
 .missing-if-branch .pln{
     color: yellow !important;
