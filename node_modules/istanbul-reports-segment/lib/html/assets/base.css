@@ -101,7 +101,9 @@ table.coverage td span.cline-any {
     background: #333;
     color: yellow;
 }
-
+.missing-if-branch-add .pln{
+    color: yellow !important;
+}
 .skip-if-branch {
     display: none;
     margin-right: 10px;
